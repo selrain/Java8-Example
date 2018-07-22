@@ -22,6 +22,9 @@ public class StreamConvert {
         Stream.of(1, null, 3, 4).filter(n -> n != null).forEach(System.out::println);
     }
 
+    /**
+     * 换一种表现形式
+     */
     @Test
     public void map() {
         List<Integer> ss = Stream.of(1, 2, 3).map(x -> x + 1).collect(Collectors.toList());

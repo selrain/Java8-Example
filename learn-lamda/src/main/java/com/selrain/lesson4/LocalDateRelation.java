@@ -3,6 +3,7 @@ package com.selrain.lesson4;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.time.MonthDay;
 
 /**
  * @Author serlain
@@ -27,5 +28,24 @@ public class LocalDateRelation {
     @Test
     public void judgeIsLeap(){
         System.out.println(LocalDate.now().isLeapYear());
+    }
+
+    @Test
+    public void dateCompare(){
+        System.out.println(LocalDate.now().equals(LocalDate.parse("2018-07-22")));
+    }
+
+    /**
+     * 检查是否是某人的生日
+     */
+    @Test
+    public void birthCheck(){
+        LocalDate dateOfBirth = LocalDate.of(2018, 07, 22);
+        MonthDay monthDay=MonthDay.from(dateOfBirth);
+
+        LocalDate localDate=LocalDate.now();
+        MonthDay monthDay1=MonthDay.of(localDate.getMonth(),localDate.getDayOfMonth());
+
+        System.out.println(monthDay.equals(monthDay1));
     }
 }
